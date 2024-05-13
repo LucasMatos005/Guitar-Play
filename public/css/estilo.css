@@ -5,6 +5,7 @@ body {
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: black;
+  background-image: linear-gradient(to right, #000000, #C89116);
 }
 
 :root {
@@ -23,7 +24,6 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
 }
 
 .header .container {
@@ -34,11 +34,16 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #FFDE59;
 }
 
 .agora {
   font-weight: 800;
+}
+
+.logo{
+  width: 100px;
+  margin: 0px;
 }
 
 .navbar {
@@ -47,13 +52,13 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: #FFDE59;
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #C74E14;
   width: fit-content;
-  font-weight: 500;
+  font-weight: 450;
 }
 
 .header h1 {
@@ -63,9 +68,10 @@ body {
 /* BANNER */
 
 .banner {
-  height: var(--tamanho-banner);
+  /* height: var(--tamanho-banner); */
+  height: 700px;
   color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/violaoIndex.jpg');
   background-size: cover;
 }
 
@@ -89,8 +95,9 @@ body {
 /* MISSÃO VISÃO VALORES */
 
 .social {
-  background-color: #e5e5e5;
+  background-color: #993B0E;
   display: flex;
+  height: 500px;
 }
 
 .social .container {
@@ -116,14 +123,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #FFDE59;
+  border-radius: 20px;
+  height: 400px;
 }
 
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
+  background-image: linear-gradient(to right, #000000, #C89116);
+  height: 80px;
+  color: #FFDE59;
   display: flex;
   font-size: 15px;
 }
