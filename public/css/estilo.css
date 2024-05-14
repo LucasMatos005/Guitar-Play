@@ -42,8 +42,10 @@ body {
 }
 
 .logo{
-  width: 100px;
+  width: 90px;
+  height: 90px;
   margin: 0px;
+  margin-right: 450px;
 }
 
 .navbar {
@@ -119,10 +121,24 @@ body {
   text-align: center;
 }
 
+.social h4{
+  margin: 20px 20px 0px 100px;
+  font-size: 25px;
+}
+
+.onu{
+  display: flex;
+  flex-direction: row;
+}
+
+.onu img{
+  margin: 10px;
+}
+
 .box {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   background-color: #FFDE59;
   border-radius: 20px;
   height: 400px;
@@ -151,10 +167,9 @@ body {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/fundoCadastro.jpg');
   background-size: cover;
 }
-
 .login .container {
   justify-content: center;
   align-items: center;
@@ -163,12 +178,12 @@ body {
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-image: linear-gradient(to right, #000000, #C89116);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: #FFDE59;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -176,7 +191,7 @@ body {
 
 .card h2 {
   margin: 0;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .formulario {
@@ -224,7 +239,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #e6005a;
+  background-color: #3D332E;
   width: 120px;
   height: 30px;
   align-self: center;
