@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
   <!--header inicio-->
   <div class="header">
     <div class="container">
@@ -57,8 +57,8 @@
               -->
               <div class="campo">
                 <span>Nível:</span>
-                <select name="nivel" id="nivel_input">
-                  <option selected>Selecione um nível</option>
+              <select id="nivel_input">
+                <option selected disabled>Selecione um nível</option>
                 <option value="iniciante">Iniciante</option>
                 <option value="intermediario">Intermediário</option>
                 <option value="avancado">Avançado</option>
@@ -117,12 +117,12 @@
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
+    var nivelVar = nivel_input.value;
     var nomeVar = nome_input.value;
     var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value;
     var contem_arroba = emailVar.indexOf('@');
     var contem_ponto = emailVar.indexOf('.');
     // nome
@@ -171,17 +171,18 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      empresaVar == ""
-    ) {
+      nivelVar == "")
+      {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Mensagem de erro para todos os campos em branco)";
 
       finalizarAguardar();
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
+    } 
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -192,11 +193,11 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
+        nivelServer: nivelVar,
         nomeServer: nomeVar,
         cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        empresaServer: empresaVar
       }),
     })
       .then(function (resposta) {
@@ -226,23 +227,24 @@
     return false;
   }
 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
+  //modificar para nivel
+  // function listar() {
+  //   fetch("/empresas/listar", {
+  //     method: "GET",
+  //   })
+  //     .then(function (resposta) {
+  //       resposta.json().then((empresas) => {
+  //         empresas.forEach((empresa) => {
+  //           listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+  //         });
+  //       });
+  //     })
+  //     .catch(function (resposta) {
+  //       console.log(`#ERRO: ${resposta}`);
+  //     });
+  // }
 
-  function sumirMensagem() {
-    cardErro.style.display = "none";
-  }
+  // function sumirMensagem() {
+  //   cardErro.style.display = "none";
+  // }
 </script>
