@@ -11,7 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <!-- <link rel="icon" href="./assets/icon/favicon2.ico"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link type="image/png" sizes="16x16" rel="icon" href=".../icons8-violão-16.png">
 </head>
@@ -131,7 +131,8 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
                     sessionStorage.CPF_USUARIO = json.cpf;
-                    sessionStorage.NIVEL = json.Nivel;
+                    sessionStorage.NIVEL = json.nivel;
+                    console.log("Json HTML" + json.nivel)
                     // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {

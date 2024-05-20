@@ -23,6 +23,7 @@ function autenticar(req, res) {
                         // aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
                             // .then((resultadoAquarios) => {
                                 if (resultadoAutenticar.length > 0) {
+                                    console.log(resultadoAutenticar[0].Nivel)
                                     res.json({
                                         id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,

@@ -27,6 +27,7 @@ SHOW TABLES;
 
 DROP TABLE nivel;
 
+SELECT * FROM aviso;
 SELECT * FROM usuario;
 SELECT * FROM nivel;
 
