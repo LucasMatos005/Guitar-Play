@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+    <title>Guitar Play | Página Inicial</title>
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -20,45 +20,70 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body onload="validarSessao()">
 
     <div class="janela">
 
         <div class="header-left dash-header">
 
-            <h1>AquaTech</h1>
+            <h1>Guitar Play</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-                <h3>Seu CPF é: <span id="b_cpf">cpf</span></h3>
+                <h3>Olá! Seja bem vindo, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Seu nível é: <span ID="b_nivel">Nivel</span></h3>
+                <h3>Seu cpf é: <span id="b_cpf">cpf</span></h3>
             </div>
 
             <div class="btn-nav">
-                <h3>Aquários</h3>
+                <h3>Aulas - Dicas</h3>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
+                    <h3>Estatísticas</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Troca de Conhecimento</h3>
                 </a>
             </div>
+
+
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
 
         </div>
-
         <div class="dash">
-            <div id="alerta">
+            <div class="aulas">
+                <div>
+                    <h1>Aulas</h1>
+                </div>
+                <div>
+                    <video src="../assets/videos/ray.mp4" width="300" poster="../assets/imgs/fundoCadastro.jpg" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="300" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="300" controls></video>
+                </div>
             </div>
-            <div class="area-parametros-alerta">
+            <div class="dicas">
+                <div>
+                    <h1>Dicas</h1>
+                </div>
+                <div>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <iframe width="200" src="https://www.youtube.com/embed/1X9uydiee50?si=nzBC3fLCAP7t3Vm7" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <!-- <div id="alerta"></div> -->
+            <!-- <div class="area-parametros-alerta">
                 <p class="titulo-legenda">
                     Legenda - Parâmetros para Alertas
                 </p>
@@ -84,12 +109,8 @@
                         <p>&gt;=23°C</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="cards" id="cardAquarios">
-
-            </div>
-
+            </div> -->
+            <!-- <div class="cards" id="cardAquarios"></div> -->
         </div>
 
     </div>
@@ -99,24 +120,25 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
+    b_nivel.innerHTML = sessionStorage.NIVEL_USUARIO;
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
+    // function exibirAquarios() {
+    //     JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+    //         document.getElementById("cardAquarios").innerHTML += `
+    //                 <div class="card-aquario">
+    //                     <div class="title-aquario">
+    //                         <h1>${item.descricao}</h1>
+    //                     </div>
+    //                     <div class="desc-aquario">
+    //                     <div class="temperatura">
+    //                         <p id="temp_aquario_${item.id}">-°C</p>
+    //                     </div>
+    //                     <div class="cor-alerta" id="card_${item.id}"></div>
+    //                 </div>
+    //                 </div>
+    //                 `
+    //     });
+    // }
 
 </script>
 

@@ -120,9 +120,25 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #573b2e;
   height: 100vh;
   overflow: auto;
+}
+
+.aulas{
+  display: flex;
+  color: #C74E14;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(27, 24, 24);
+}
+
+.dicas{
+  display: flex;
+  color: #C74E14;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(27, 24, 24);
 }
 
 .area-parametros-alerta {
@@ -348,7 +364,7 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid #C74E14;
   background-color: #212124;
 }
 
@@ -365,7 +381,7 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #C74E14;
 }
 
 .hello {
@@ -377,7 +393,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #C74E14;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -389,7 +405,7 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: #C74E14;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -397,15 +413,15 @@ canvas {
 
 .btn-nav-white {
   width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
+  background-color: #3D332E;
+  border: 3px solid #C74E14;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #ffffff;
   padding: 0;
   margin: 0;
 }
@@ -420,7 +436,7 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #3d332e;
   color: white;
   border-radius: 10px;
   text-align: center;
