@@ -20,7 +20,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao()">
+<body onload="validarSessao(), aparecer()">
 
     <div class="janela">
 
@@ -50,17 +50,16 @@
                 </a>
             </div>
 
-
-
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
 
         </div>
-        <div class="dash">
+
+        <div id="iniciante" class="dash" style="display: none;">
             <div class="aulas">
                 <div>
-                    <h1>Aulas</h1>
+                    <h1>Aulas - Iniciante</h1>
                 </div>
                 <div>
                     <video src="../assets/videos/ray.mp4" width="300" poster="../assets/imgs/fundoCadastro.jpg" controls></video>
@@ -82,35 +81,60 @@
                     </iframe>
                 </div>
             </div>
-            <!-- <div id="alerta"></div> -->
-            <!-- <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
+        </div>
+
+        <div id="intermediario" class="dash" style="display: none;">
+            <div class="aulas">
+                <div>
+                    <h1>Aulas - Intermediário</h1>
                 </div>
-            </div> -->
-            <!-- <div class="cards" id="cardAquarios"></div> -->
+                <div>
+                    <video src="../assets/videos/ray.mp4" width="300" poster="../assets/imgs/fundoCadastro.jpg" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="300" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="300" controls></video>
+                </div>
+            </div>
+            <div class="dicas">
+                <div>
+                    <h1>Dicas</h1>
+                </div>
+                <div>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <iframe width="200" src="https://www.youtube.com/embed/1X9uydiee50?si=nzBC3fLCAP7t3Vm7" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="avancado" class="dash" style="display: none;">
+            <div class="aulas">
+                <div>
+                    <h1>Aulas - Avançado</h1>
+                </div>
+                <div>
+                    <video src="../assets/videos/ray.mp4" width="300" poster="../assets/imgs/fundoCadastro.jpg" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="300" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="300" controls></video>
+                </div>
+            </div>
+            <div class="dicas">
+                <div>
+                    <h1>Dicas</h1>
+                </div>
+                <div>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <video src="../assets/videos/aula01.mp4" width="200" controls></video>
+                    <iframe width="200" src="https://www.youtube.com/embed/1X9uydiee50?si=nzBC3fLCAP7t3Vm7" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -122,7 +146,15 @@
     b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
     b_nivel.innerHTML = sessionStorage.NIVEL;
 
-
+    function aparecer(){
+        if(b_nivel.innerHTML == 'iniciante'){
+            iniciante.style.display = 'block';
+        } else if(b_nivel.innerHTML == 'intermediario'){
+            intermediario.style.display = 'block';
+        } else if(b_nivel.innerHTML == 'avancado'){
+            avancado.style.display = 'block';
+        }
+    }
     // function exibirAquarios() {
     //     JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
     //         document.getElementById("cardAquarios").innerHTML += `
