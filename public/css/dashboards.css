@@ -133,6 +133,51 @@ body {
   background-color: rgb(27, 24, 24);
 }
 
+.videos{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.v1{
+  display: flex;
+  flex-direction: row;
+  background-color: #161618;
+  border-radius: 10px;
+  border: 4px solid #C74e14;
+  padding: 1%;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.descricao {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.v2{
+  display: flex;
+  flex-direction: row;
+  background-color: #161618;
+  border-radius: 10px;
+  border: 4px solid #C74e14;
+  padding: 1%;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.v3{
+  display: flex;
+  flex-direction: row;
+  background-color: #161618;
+  border-radius: 10px;
+  border: 4px solid #C74e14;
+  padding: 1%;
+  justify-content: space-between;
+  margin: 1%;
+}
+
 .dicas{
   display: flex;
   color: #C74E14;
