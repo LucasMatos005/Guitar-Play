@@ -154,9 +154,9 @@
                         </div>
                     </div>
                 </div>
-               
-            <!-- <div class="dicas"> <div><h1>Dicas</h1></div></div> -->
+            </div>
         </div>
+
 
         <div id="avancado" class="dash" style="display: none;">
             <div class="aulas">
@@ -206,12 +206,8 @@
                         </div>
                     </div>
                 </div>
-            <!-- <script>console.log("você me lê?")</script> -->
-            </div>
-            <!-- <div class="dicas"><div><h1>Dicas</h1></div> -->
             </div>
         </div>
-
     </div>
 
 </body>
@@ -224,10 +220,12 @@
     function aparecer(){
         if(b_nivel.innerHTML == 'iniciante'){
             iniciante.style.display = 'block';
-        } else if(b_nivel.innerHTML == 'intermediario'){
+        } else if(b_nivel.innerHTML == 'intermediário'){
             intermediario.style.display = 'block';
-        } else if(b_nivel.innerHTML == 'avancado'){
-            avancado.style.display = 'block';
+        } else if(b_nivel.innerHTML == 'avançado'){
+            // avancado.style.display = 'block';
+            document.getElementById("avancado").style.display = 'block';
+            alert(b_nivel.innerHTML);
         }
     }
     // function exibirAquarios() {
