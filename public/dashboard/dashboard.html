@@ -36,6 +36,7 @@
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Seu nível é: <span id="b_nivel">Nivel</span></h3>
                 <h3>Seu CPF é: <span id="b_cpf">cpf</span></h3>
             </div>
 
@@ -83,6 +84,7 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
+    b_nivel.innerHTML = sessionStorage.NIVEL;
 
     let proximaAtualizacao;
 
