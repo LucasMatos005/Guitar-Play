@@ -1,11 +1,6 @@
 CREATE DATABASE guitarplay;
 USE guitarplay;
 
-CREATE TABLE nivel(
- idNivel INT PRIMARY KEY AUTO_INCREMENT,
- classificacao_nivel VARCHAR(45)
-);
-
 CREATE TABLE usuario(
  id INT PRIMARY KEY AUTO_INCREMENT,
  nome VARCHAR(50),
@@ -15,6 +10,14 @@ CREATE TABLE usuario(
  Nivel VARCHAR(45)
 );
 
+SELECT Nivel FROM usuario;
+SELECT * FROM usuario;
+UPDATE usuario SET nome = 'Wilson', email = 'wilson@gmail.com', cpf = '45654323456', senha = 'arroz##' WHERE id = 6;
+UPDATE usuario SET Nivel = 'intermediário' WHERE id = 2;
+UPDATE usuario SET Nivel = 'avançado' WHERE id = 4;
+ 
+TRUNCATE TABLE usuario;
+
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
@@ -23,6 +26,8 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
+TRUNCATE TABLE aviso;
+
 SHOW TABLES;
 
 DROP TABLE nivel;
@@ -30,20 +35,4 @@ DROP TABLE nivel;
 SELECT * FROM aviso;
 SELECT * FROM usuario;
 SELECT * FROM nivel;
-
-CREATE TABLE TESTE (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-    detalhe VARCHAR(45)
-);
-
-INSERT INTO TESTE VALUES 
-	(DEFAULT,"batata"),
-    (DEFAULT,"maça"),
-    (DEFAULT,"batata"),
-    (DEFAULT,"pera"),
-    (DEFAULT,"batata"),
-    (DEFAULT,"tomate");
-    
-SELECT COUNT(id) FROM TESTE WHERE detalhe = 'batata';
-
-DROP TABLE TESTE;
+DELETE FROM usuario WHERE id = 1;

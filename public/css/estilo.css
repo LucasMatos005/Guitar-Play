@@ -129,6 +129,15 @@ body {
 .onu{
   display: flex;
   flex-direction: row;
+  padding: 2%;
+  color: #C74E14;
+}
+
+.sobre_mim{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  color: #C74E14;
 }
 
 /* deixar a imagem com borda tbm */
@@ -143,7 +152,7 @@ body {
   align-items: flex-start;
   background-color: #FFDE59;
   border-radius: 20px;
-  height: 400px;
+  height: 420px;
 }
 
 /* FOOTER */
