@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <link rel="shortcut icon" href="../assets/imgs/logoSemFundo.png">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,22 +57,17 @@
                 Assim que inserir vá para o script abaixo.
               -->
               <div class="campo">
-                <span>Nível:</span>
-              <select id="nivel_input">
-                <option selected disabled>Selecione um nível</option>
-                <option value="iniciante">Iniciante</option>
-                <option value="intermediário">Intermediário</option>
-                <option value="avançado">Avançado</option>
-              </select>
-            </div>
-            <div class="campo">
-              <span>Nome:</span>
-              <input id="nome_input" type="text" placeholder="Seu nome" />
-            </div>
-            <div class="campo">
+                <span>Nome:</span>
+                <input id="nome_input" type="text" placeholder="Seu nome" />
+              </div>
+              <div class="campo">
+                <span>Senha:</span>
+                <input id="senha_input" type="password" placeholder="******" />
+              </div>
+            <!-- <div class="campo">
               <span>CPF:</span>
               <input id="cpf_input" type="text" placeholder="Seu CPF" />
-            </div>
+            </div> -->
           </div>
           <div class="direita" >
           <div class="campo">
@@ -79,20 +75,25 @@
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
           <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
         </div>
       </div>
+          <div class="nivel">
+            <span>Nível:</span>
+            <select id="nivel_input">
+              <option selected disabled>Selecione um nível</option>
+              <option value="iniciante">Iniciante</option>
+              <option value="intermediário">Intermediário</option>
+              <option value="avançado">Avançado</option>
+            </select>
+          </div>
         <div>
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
+          <img src="./assets/aguarde-orange.gif" id="loading-gif" />
         </div>
         <div id="div_erros_login"></div>
       </div>
@@ -119,7 +120,7 @@
     // Agora vá para o método fetch logo abaixo
     var nivelVar = nivel_input.value;
     var nomeVar = nome_input.value;
-    var cpfVar = cpf_input.value;
+    // var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
@@ -134,13 +135,13 @@
       return false;
     }
     //  cpf
-    else if(cpfVar.length != 11){
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Quantidade de caracteres de CPF inválida. Tem que ser 11 dígitos";
-      finalizarAguardar();
-      return false;
-    }
+    // else if(cpfVar.length != 11){
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML =
+    //     "Quantidade de caracteres de CPF inválida. Tem que ser 11 dígitos";
+    //   finalizarAguardar();
+    //   return false;
+    // }
     // email
     else if(contem_arroba < 0 && contem_ponto < 0){
       cardErro.style.display = "block";
@@ -167,7 +168,6 @@
     }
     else if (
       nomeVar == "" ||
-      cpfVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
@@ -195,7 +195,7 @@
         // Agora vá para o arquivo routes/usuario.js
         nivelServer: nivelVar,
         nomeServer: nomeVar,
-        cpfServer: cpfVar,
+        // cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
       }),

@@ -1,6 +1,6 @@
 var graficosModel = require("../models/graficosModel");
 
-function listar(res) {
+function listar(req, res) {
     graficosModel.listar().then(function(resultado){
         var contIniciante = 0;
         var contIntermediario = 0;

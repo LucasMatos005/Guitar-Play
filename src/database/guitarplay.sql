@@ -15,6 +15,7 @@ SELECT * FROM usuario;
 UPDATE usuario SET nome = 'Wilson', email = 'wilson@gmail.com', cpf = '45654323456', senha = 'arroz##' WHERE id = 6;
 UPDATE usuario SET Nivel = 'intermediário' WHERE id = 2;
 UPDATE usuario SET Nivel = 'avançado' WHERE id = 4;
+ALTER TABLE usuario DROP COLUMN cpf; 
  
 TRUNCATE TABLE usuario;
 
