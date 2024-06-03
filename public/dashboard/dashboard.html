@@ -53,7 +53,7 @@
 
             <div class="btn-nav-white">
                 <a href="./cards.html">
-                    <h3>Aulas - Dicas</h3>
+                    <h3>Aulas</h3>
                 </a>
             </div>
 
@@ -76,9 +76,7 @@
         </div>
 
         <div class="dash">
-           <canvas id="graphycs" >
-
-           </canvas>
+            <canvas id="graphycs" class="chart" ></canvas>
         </div>
     </div>
 
@@ -95,6 +93,8 @@
     fetch("../graficos/listar", { cache: 'no-store' }).then(function(resposta){
         resposta.json().then(function(respostajson){
             var grafico = document.getElementById("graphycs").getContext("2d");
+            grafico.canvas.parentNode.style.width = '200px';
+            grafico.canvas.parentNode.style.height = '200px';
             new Chart (
                 grafico, {
                     type: "pie",
@@ -106,7 +106,7 @@
                                 respostajson.qtdIntermediario,
                                 respostajson.qtdAvancado
                             ],
-                            backgroundColor: ["blue", "red", "green"]
+                            backgroundColor: ["#c74e14", "#FFDE59", "#3D332E"]
                         }]
                     }
                 }
