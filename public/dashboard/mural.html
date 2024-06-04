@@ -46,6 +46,12 @@
                 </a>
             </div>
 
+            <div class="btn-nav-white">
+                <a href="./voceEhBomDeOuvido.html">
+                    <h3>Você é bom de ouvido?</h3>
+                </a>
+            </div>
+
             <div class="btn-nav">
                 <h3>Troca de conhecimento</h3>
             </div>
@@ -57,45 +63,41 @@
         </div>
 
         <div class="dash-right">
-
-
-            <div class="avisos">
-                <div id="alerta">
-                </div>
-                <div class="container">
-                    <h1>Publicar uma pergunta ou resposta</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Título:
+                <div id="boxMural">
+                    <div class="avisos">
+                        <div id="alerta">
+                        </div>
+                    <div class="container">
+                        <h1>Publicar uma pergunta ou resposta</h1>
+                        <div class="div-form">
+                            <form id="form_postagem" method="post" onsubmit="return publicar()">
+                                <label>
+                                    Título:
+                                    <br>
+                                    <input name="titulo" id="titulo" maxlength="100" type="text">
+                                </label>
                                 <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
                                 <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Bate Papo</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
+                                <label>
+                                    Descrição (máximo de 250 caracteres):
+                                    <br>
+                                    <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                </label>
+                                <br>
+                                <br>
+                                <button>Enviar</button>
+                            </form>
+                        </div>
+                        <h1>Bate Papo</h1>
+                        <div class="div-results">
+                            <div id="feed_container" class="feed-container">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 </body>
 
 </html>
@@ -206,10 +208,9 @@
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
                         //nivel
-                        // var spanNivel = document.createElement("span");
+                        var spanNivel = document.createElement("span");
 
-
-                        // spanNivel.innerHTML = "Nível: <b>" + publicacao.nivel + "</b>"; 
+                        spanNivel.innerHTML = "Nível: <b>" + publicacao.Nivel + "</b>"; 
                         spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
@@ -236,6 +237,9 @@
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
+                        //nivel
+                        divPublicacao.appendChild(spanNivel);
+                        //nivel
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
                         divButtons.appendChild(btnEditar);
@@ -243,7 +247,7 @@
                         feed.appendChild(divPublicacao);
                     }
 
-                    finalizarAguardar();
+                    // finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/imgs/logoSemFundo.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Play | Página Inicial</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+
+        <div class="header-left dash-header">
+
+            <h1>Guitar Play</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Seu nível é: <span id="b_nivel">Nivel</span></h3>
+                <!-- <h3>Seu cpf é: <span id="b_cpf">cpf</span></h3> -->
+            </div>
+
+            <div class="btn-nav-white">
+                <h3>Aulas</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Estatísticas</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                    <h3>Você é bom de ouvido?</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Troca de Conhecimento</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="fundo_quiz">
+            <div class="questao" >
+                <div class="som" >
+                    <button onclick="som()">Clique para ouvir</button>
+                </div>
+                <div class="alternativas">
+                    <button>C</button>
+                    <button>D</button>
+                    <button>E</button>
+                    <button>F</button>
+                    <button>G</button>
+                    <button>A</button>
+                    <button>B</button>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    // b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
+    b_nivel.innerHTML = sessionStorage.NIVEL;
+
+    function som(){
+        
+    }
+
+</script>
+
+</html>
