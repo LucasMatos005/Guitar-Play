@@ -156,7 +156,7 @@ body {
 /* deixar a imagem com borda tbm */
 .onu img{
   margin: 10px;
-  border-radius: 15px solid;
+  border-radius: 15px solid #c74e14;
 }
 
 .box {
@@ -173,19 +173,27 @@ body {
 .footer {
   background-image: linear-gradient(to right, #000000, #C89116);
   height: 80px;
+  width: 100%;
   color: #FFDE59;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   font-size: 15px;
 }
 
-.footer .container {
-  justify-content: center;
-  text-align: center;
+.footer .logo {
+  margin: 0;
 }
 
-.footer .container .version {
+/* .footer .container {
+  justify-content: center;
+  text-align: center;
+} */
+
+/* .footer .container .version {
   font-size: 12px;
-}
+} */
 
 /* LOGIN */
 
