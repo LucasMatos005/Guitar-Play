@@ -75,8 +75,10 @@
 
         </div>
 
-        <div class="dash">
-            <canvas id="graphycs" class="chart" ></canvas>
+        <div class="boxGrafico">
+            <div class="dashGrafico">
+                <canvas id="graphycs" class="chart" ></canvas>
+            </div>
         </div>
     </div>
 
@@ -93,8 +95,8 @@
     fetch("../graficos/listar", { cache: 'no-store' }).then(function(resposta){
         resposta.json().then(function(respostajson){
             var grafico = document.getElementById("graphycs").getContext("2d");
-            grafico.canvas.parentNode.style.width = '200px';
-            grafico.canvas.parentNode.style.height = '200px';
+            grafico.canvas.parentNode.style.width = '400px';
+            grafico.canvas.parentNode.style.height = '400px';
             new Chart (
                 grafico, {
                     type: "pie",
@@ -106,8 +108,21 @@
                                 respostajson.qtdIntermediario,
                                 respostajson.qtdAvancado
                             ],
-                            backgroundColor: ["#c74e14", "#FFDE59", "#3D332E"]
+                            backgroundColor: ["#c74e14", "#883001", "#3D332E"]
                         }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#FFF',
+                                    font: {
+                                        size: '20px',
+                                        weight: 'bold',
+                                    }
+                                },
+                            }
+                        }
                     }
                 }
             )

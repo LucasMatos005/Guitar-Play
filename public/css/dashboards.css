@@ -186,6 +186,23 @@ body {
   background-color: rgb(27, 24, 24);
 }
 
+.boxGrafico {
+  width: 100vw;
+  height: 100vh;
+  margin-left: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #573b2e;
+}
+
+.dashGrafico {
+  border-radius: 10px;
+  border: 4px solid #C74E14;
+  padding: 1%;
+  background-color: #161618;
+}
+
 .area-parametros-alerta {
   /* border: 2px solid pink; */
   display: flex;

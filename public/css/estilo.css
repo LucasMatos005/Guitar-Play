@@ -16,19 +16,6 @@ body {
   --tamanho-footer: 65px;
 }
 
-/* dash */
-.chart{
-  display: flex;
-  width: 10px;
-  height: 10px;
-}
-
-#graphycs {
-  display: flex;
-  width: 10px;
-  height: 10px;
-}
-
 .container {
   display: flex;
   width: 80%;
