@@ -75,6 +75,7 @@
                 <h1>Qual é o acorde?👂🏽🎵</h1>
                 <div class="som" >
                     <button id="ouvir" class="btn_ouvir" onclick="som()">Clique para ouvir</button>
+                    <button id="next_chord" class="btn_ouvir" onclick="proximoAcorde()" >Próximo Acorde</button>
                 </div>
                 <div class="alternativas">
                     <button onclick="validarquestao('C')" id="C" class="btn_alt">C</button>
@@ -130,7 +131,24 @@
         } else {
             document.getElementById(`${resposta}`).style.backgroundColor = 'red';
         }
+        document.getElementById('C').disabled = true;
+        document.getElementById('D').disabled = true;
+        document.getElementById('E').disabled = true;
+        document.getElementById('F').disabled = true;
+        document.getElementById('G').disabled = true;
+        document.getElementById('A').disabled = true;
+        document.getElementById('B').disabled = true;
+    }
+    
+    function proximoAcorde(){
         contador++;
+        document.getElementById('C').style.backgroundColor = '#573b2e';
+        document.getElementById('D').style.backgroundColor = '#573b2e';
+        document.getElementById('E').style.backgroundColor = '#573b2e';
+        document.getElementById('F').style.backgroundColor = '#573b2e';
+        document.getElementById('G').style.backgroundColor = '#573b2e';
+        document.getElementById('A').style.backgroundColor = '#573b2e';
+        document.getElementById('B').style.backgroundColor = '#573b2e';
     }
 
 </script>

@@ -223,6 +223,14 @@ body {
   color: #c74e14;
 }
 
+.som {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 500px;
+}
+
 .btn_alt {
   color: #C74E14;
   border-radius: 10px;
@@ -243,6 +251,13 @@ body {
   font-size: large;
   width: 190px;
   height: 60px;
+}
+
+#next_chord:hover{
+  background-color: #161618;
+  transition: 0.2s;
+  color: #ffffff;
+  transform: scale(1.2);
 }
 
 #comecar:hover{
