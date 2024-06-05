@@ -104,6 +104,9 @@
     }
 
     var contador = 0;
+    var acerto = 0;
+    var erro = 0;
+
     var audios = [
         "../assets/audios/C.m4a",
         "../assets/audios/D.m4a",
@@ -128,8 +131,10 @@
     function validarquestao(resposta){
         if(resposta == respostas[contador]){
             document.getElementById(`${resposta}`).style.backgroundColor = 'green';
+            acerto++;
         } else {
             document.getElementById(`${resposta}`).style.backgroundColor = 'red';
+            erro++;
         }
         document.getElementById('C').disabled = true;
         document.getElementById('D').disabled = true;
@@ -141,6 +146,13 @@
     }
     
     function proximoAcorde(){
+        document.getElementById('C').disabled = false;
+        document.getElementById('D').disabled = false;
+        document.getElementById('E').disabled = false;
+        document.getElementById('F').disabled = false;
+        document.getElementById('G').disabled = false;
+        document.getElementById('A').disabled = false;
+        document.getElementById('B').disabled = false;
         contador++;
         document.getElementById('C').style.backgroundColor = '#573b2e';
         document.getElementById('D').style.backgroundColor = '#573b2e';
@@ -149,6 +161,10 @@
         document.getElementById('G').style.backgroundColor = '#573b2e';
         document.getElementById('A').style.backgroundColor = '#573b2e';
         document.getElementById('B').style.backgroundColor = '#573b2e';
+
+        if(contador == 7){
+            alert(`Acabou o quiz. Sua pontuação foi \n Acertos: ${acerto} \n Erros: ${erro}`)
+        }
     }
 
 </script>
