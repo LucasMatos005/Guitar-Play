@@ -35,7 +35,9 @@
             </div>
 
             <div class="btn-nav-white">
-                <h3>Aulas</h3>
+                <a href="./cards.html">
+                    <h3>Aulas</h3>
+                </a>
             </div>
 
             <div class="btn-nav-white">
@@ -61,32 +63,76 @@
         </div>
 
         <div class="fundo_quiz">
-            <div class="questao" >
-                <div class="som" >
-                    <button onclick="som()">Clique para ouvir</button>
-                </div>
-                <div class="alternativas">
-                    <button>C</button>
-                    <button>D</button>
-                    <button>E</button>
-                    <button>F</button>
-                    <button>G</button>
-                    <button>A</button>
-                    <button>B</button>
+
+            <div id="inicio_quiz" class="questao">
+                <h1>Teste se seu ouvido está afiado!</h1>
+                <div>
+                    <button id="comecar" onclick="comecarQuiz()" class="btn_ouvir" >Começar Desafio</button>
                 </div>
             </div>
+
+            <div id="pergunta" class="questao" style="display: none;">
+                <h1>Qual é o acorde?👂🏽🎵</h1>
+                <div class="som" >
+                    <button id="ouvir" class="btn_ouvir" onclick="som()">Clique para ouvir</button>
+                </div>
+                <div class="alternativas">
+                    <button onclick="validarquestao('C')" id="C" class="btn_alt">C</button>
+                    <button onclick="validarquestao('D')" id="D" class="btn_alt">D</button>
+                    <button onclick="validarquestao('E')" id="E" class="btn_alt">E</button>
+                    <button onclick="validarquestao('F')" id="F" class="btn_alt">F</button>
+                    <button onclick="validarquestao('G')" id="G" class="btn_alt">G</button>
+                    <button onclick="validarquestao('A')" id="A" class="btn_alt">A</button>
+                    <button onclick="validarquestao('B')" id="B" class="btn_alt">B</button>
+                </div>
+            </div>
+
         </div>
 
-
+        <audio id="audio_questao"></audio>
 </body>
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    // b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
     b_nivel.innerHTML = sessionStorage.NIVEL;
 
+    function comecarQuiz(){
+        inicio_quiz.style.display = "none";
+        pergunta.style.display = "block";
+        pergunta.style.display = "flex";
+    }
+
+    var contador = 0;
+    var audios = [
+        "../assets/audios/C.m4a",
+        "../assets/audios/D.m4a",
+        "../assets/audios/E.m4a",
+        "../assets/audios/F.m4a",
+        "../assets/audios/G.m4a",
+        "../assets/audios/A_La.m4a",
+        "../assets/audios/B.m4a",
+    ];
+
+    var respostas = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+
     function som(){
-        
+        var botao = document.getElementById('ouvir');
+        document.getElementById('audio_questao').src = audios[contador];
+        var audio = document.getElementById('audio_questao');
+        botao.addEventListener('click', () => {
+            audio.play();
+        });
+    }
+
+    function validarquestao(resposta){
+        if(resposta == respostas[contador]){
+            alert("Você acertou!")
+            respostas[contador].style.backgroundColor = 'green';
+        } else {
+            alert("Você errou!")
+            respostas[contador].style.backgroundColor = 'red';
+        }
+        contador++;
     }
 
 </script>
