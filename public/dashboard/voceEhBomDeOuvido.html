@@ -126,11 +126,9 @@
 
     function validarquestao(resposta){
         if(resposta == respostas[contador]){
-            alert("Você acertou!")
-            respostas[contador].style.backgroundColor = 'green';
+            document.getElementById(`${resposta}`).style.backgroundColor = 'green';
         } else {
-            alert("Você errou!")
-            respostas[contador].style.backgroundColor = 'red';
+            document.getElementById(`${resposta}`).style.backgroundColor = 'red';
         }
         contador++;
     }
