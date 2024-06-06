@@ -92,7 +92,7 @@
                     </div>
                     <button id="playAgain" class="btn_ouvir" onclick="reiniciar()" style="display: none;">Jogar Novamente?</button>
                 </div>
-                <div class="alternativas">
+                <div id="crefgab" class="alternativas">
                     <button onclick="validarquestao('C')" id="C" class="btn_alt">C</button>
                     <button onclick="validarquestao('D')" id="D" class="btn_alt">D</button>
                     <button onclick="validarquestao('E')" id="E" class="btn_alt">E</button>
@@ -189,11 +189,14 @@
             cq.style.display = "block";
             ouvir.style.display = "none";
             next_chord.style.display = "none";
+            crefgab.style.display = "none";
 
+            //json para fetch de registro
             var pontos = {
                 acerto,
                 erro
             }
+
             // gravar o resultado do quiz no banco
             fetch("/pontuacao/registrar", {
                 method: "post",
@@ -207,35 +210,38 @@
                 console.log(`#ERRO: ${resposta}`);
             })
 
-            var chart = document.getElementById("chart_resultados");
-            new Chart (
-                chart, {
-                    type: "doughnut",
-                    data: {
-                        labels: ["Acertos", "Erros"],
-                        datasets: [{
-                            data: [
-                                acerto,
-                                erro 
-                            ],
-                            backgroundColor: ["#c74e14", "#883001"]
-                        }]
-                    },
-                    options: {
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: '#FFF',
-                                    font: {
-                                        size: '20px',
-                                        weight: 'bold',
-                                    }
-                                },
+            fetch("../pontuacao/mostrar", { cache: 'no-store'}).then(function(resposta){
+
+                var chart = document.getElementById("chart_resultados");
+                new Chart (
+                    chart, {
+                        type: "doughnut",
+                        data: {
+                            labels: ["Acertos", "Erros"],
+                            datasets: [{
+                                data: [
+                                    acerto,
+                                    erro 
+                                ],
+                                backgroundColor: ["#c74e14", "#883001"]
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        color: '#FFF',
+                                        font: {
+                                            size: '20px',
+                                            weight: 'bold',
+                                        }
+                                    },
+                                }
                             }
                         }
                     }
-                }
-            )
+                )
+            })
         }
     }
 
@@ -250,6 +256,7 @@
         next_chord.style.display = "block";
         ouvir.style.display = "block";
         cq.style.display = "none";
+        crefgab.style.display = "block";
     }
 
 </script>

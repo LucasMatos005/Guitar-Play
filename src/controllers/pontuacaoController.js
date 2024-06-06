@@ -1,8 +1,7 @@
 var pontuacaoModel = require("../models/pontuacaoModel");
 
 function mostrar(req, res) {
-    pontuacaoModel.mostrar().then(function
-    (resultado){
+    pontuacaoModel.mostrar().then(function(resultado){
         res.status(200).json(resultado);
     }).catch(function(erro){
         res.status(500).json(erro.sqlMessage);
