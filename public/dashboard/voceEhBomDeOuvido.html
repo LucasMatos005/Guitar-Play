@@ -18,6 +18,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
 </head>
 
 <body onload="validarSessao()">
@@ -64,7 +75,7 @@
 
         <div class="fundo_quiz">
 
-            <div id="inicio_quiz" class="questao">
+            <div id="inicio_quiz" class="questao" >
                 <h1>Teste se seu ouvido está afiado!</h1>
                 <div>
                     <button id="comecar" onclick="comecarQuiz()" class="btn_ouvir" >Começar Desafio</button>
@@ -76,6 +87,10 @@
                 <div class="som" >
                     <button id="ouvir" class="btn_ouvir" onclick="som()">Clique para ouvir</button>
                     <button id="next_chord" class="btn_ouvir" onclick="proximoAcorde()" >Próximo Acorde</button>
+                    <div id="cq" class="chart_quiz" style="display: none;">
+                        <canvas id="chart_resultados"></canvas>
+                    </div>
+                    <button id="playAgain" class="btn_ouvir" onclick="reiniciar()" style="display: none;">Jogar Novamente?</button>
                 </div>
                 <div class="alternativas">
                     <button onclick="validarquestao('C')" id="C" class="btn_alt">C</button>
@@ -87,7 +102,6 @@
                     <button onclick="validarquestao('B')" id="B" class="btn_alt">B</button>
                 </div>
             </div>
-
         </div>
 
         <audio id="audio_questao"></audio>
@@ -98,9 +112,11 @@
     b_nivel.innerHTML = sessionStorage.NIVEL;
 
     function comecarQuiz(){
+
         inicio_quiz.style.display = "none";
         pergunta.style.display = "block";
         pergunta.style.display = "flex";
+
     }
 
     var contador = 0;
@@ -120,15 +136,18 @@
     var respostas = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 
     function som(){
+
         var botao = document.getElementById('ouvir');
         document.getElementById('audio_questao').src = audios[contador];
         var audio = document.getElementById('audio_questao');
         botao.addEventListener('click', () => {
             audio.play();
         });
+
     }
 
     function validarquestao(resposta){
+
         if(resposta == respostas[contador]){
             document.getElementById(`${resposta}`).style.backgroundColor = 'green';
             acerto++;
@@ -146,6 +165,7 @@
     }
     
     function proximoAcorde(){
+
         document.getElementById('C').disabled = false;
         document.getElementById('D').disabled = false;
         document.getElementById('E').disabled = false;
@@ -163,8 +183,57 @@
         document.getElementById('B').style.backgroundColor = '#573b2e';
 
         if(contador == 7){
-            alert(`Acabou o quiz. Sua pontuação foi \n Acertos: ${acerto} \n Erros: ${erro}`)
+            // alert(`Acabou o quiz. Sua pontuação foi \n Acertos: ${acerto} \n Erros: ${erro}`)
+            playAgain.style.display = "block";
+            chart_resultados.style.display = "block";
+            cq.style.display = "block";
+            ouvir.style.display = "none";
+            next_chord.style.display = "none";
+
+            var chart = document.getElementById("chart_resultados");
+            new Chart (
+                chart, {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Acertos", "Erros"],
+                        datasets: [{
+                            data: [
+                                acerto,
+                                erro 
+                            ],
+                            backgroundColor: ["#c74e14", "#883001"]
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#FFF',
+                                    font: {
+                                        size: '20px',
+                                        weight: 'bold',
+                                    }
+                                },
+                            }
+                        }
+                    }
+                }
+            )
+            chart.destroy();
         }
+    }
+
+    function reiniciar(){
+        contador = 0;
+        acerto = 0;
+        erro = 0;
+        playAgain.style.display = "none";
+        inicio_quiz.style.display = "block";
+        inicio_quiz.style.display = "flex";
+        pergunta.style.display = "none";
+        next_chord.style.display = "block";
+        ouvir.style.display = "block";
+        cq.style.display = "none";
     }
 
 </script>

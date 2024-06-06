@@ -253,6 +253,21 @@ body {
   height: 60px;
 }
 
+.chart_quiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+#playAgain:hover{
+  background-color: #161618;
+  transition: 0.2s;
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
 #next_chord:hover{
   background-color: #161618;
   transition: 0.2s;
