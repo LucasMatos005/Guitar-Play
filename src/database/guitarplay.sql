@@ -16,8 +16,16 @@ UPDATE usuario SET nome = 'Wilson', email = 'wilson@gmail.com', cpf = '456543234
 UPDATE usuario SET Nivel = 'intermediário' WHERE id = 2;
 UPDATE usuario SET Nivel = 'avançado' WHERE id = 4;
 ALTER TABLE usuario DROP COLUMN cpf; 
- 
-TRUNCATE TABLE usuario;
+
+CREATE TABLE quiz (
+	id_quiz INT PRIMARY KEY AUTO_INCREMENT,
+    quantidade_acertos INT,
+    quantidade_erros INT,
+    fkUsuario INT,
+    FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+);
+
+SELECT quantidade_acertos, quantidade_erros FROM quiz;
 
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -37,3 +45,4 @@ SELECT * FROM aviso;
 SELECT * FROM usuario;
 SELECT * FROM nivel;
 DELETE FROM usuario WHERE id = 1;
+SHOW TABLES;

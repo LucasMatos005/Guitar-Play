@@ -190,6 +190,23 @@
             ouvir.style.display = "none";
             next_chord.style.display = "none";
 
+            var pontos = {
+                acerto,
+                erro
+            }
+            // gravar o resultado do quiz no banco
+            fetch("/pontuacao/registrar", {
+                method: "post",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(pontos)
+            }).then(function (resposta) {
+                console.log("resposta: ", resposta);
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            })
+
             var chart = document.getElementById("chart_resultados");
             new Chart (
                 chart, {
@@ -219,7 +236,6 @@
                     }
                 }
             )
-            chart.destroy();
         }
     }
 
