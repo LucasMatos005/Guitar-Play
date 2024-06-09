@@ -192,8 +192,34 @@ body {
   margin-left: 20vw;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #573b2e;
+}
+
+.informacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  height: 450px;
+}
+
+.informacoes_dentro{
+  display: flex;
+  color: #c74e14;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 4px solid #C74E14;
+  padding: 1%;
+  background-color: #161618;
+}
+
+.informacoes_dentro a {
+  color: #C74E14
 }
 
 .fundo_quiz{
