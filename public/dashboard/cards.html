@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div>
-                    <select id="select_" onchange="mudarAulasIntermediario()" >
+                    <select id="select_intermediario" onchange="mudarAulasIntermediario()" >
                         <option selected disabled value="">Pronto para mais aulas?</option>
                         <option value="sim">Sim</option>
                         <option value="nao">Não</option>
@@ -220,6 +220,13 @@
                             </h3>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <select id="select_avancado" onchange="mudarAulasAvancado()" >
+                        <option selected disabled value="">Pronto para mais aulas?</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
                 </div>
             </div>
 
@@ -351,14 +358,14 @@
     }
 
     function mudarAulasAvancado(){
-        var selecionado = document.getElementById("select_").value;
+        var selecionado = document.getElementById("select_avancado").value;
         if(selecionado == 'sim'){
             avancado.style.display = 'flex';
         }
     }
 
     function mudarAulasIntermediario(){
-        var selecionado = document.getElementById("select_").value;
+        var selecionado = document.getElementById("select_intermediario").value;
         if(selecionado == 'sim'){
             intermediario.style.display = 'flex';
         }

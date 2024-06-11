@@ -26,6 +26,7 @@ CREATE TABLE quiz (
 );
 
 SELECT quantidade_acertos, quantidade_erros FROM quiz;
+SELECT * FROM quiz;
 
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
