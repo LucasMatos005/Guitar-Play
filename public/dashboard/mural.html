@@ -29,7 +29,7 @@
             <h1>Guitar Play</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Não seja tímido, <span id="b_usuario">usuário</span>!</h3>
                 <h3>Seu nível é: <span id="b_nivel">Nivel</span></h3>
                 <!-- <h3>Seu CPF é: <span id="b_cpf">cpf</span>.</h3> -->
             </div>
@@ -65,8 +65,6 @@
         <div class="dash-right">
                 <div id="boxMural">
                     <div class="avisos">
-                        <div id="alerta">
-                        </div>
                     <div class="container">
                         <h1>Publicar uma pergunta ou resposta</h1>
                         <div class="div-form">
@@ -96,6 +94,11 @@
                     </div>
                 </div>
             </div>
+        <div class="news">
+            <h1>Guitar Play Info</h1>
+            <h3>Enquanto conversa, quel tal algumas informações sobre violão?</h3>
+            <img src="../assets/imgs/anatomia_violao.png" alt="anatomia do violão">
+        </div>
         </div>
     </div>
 </body>
@@ -235,7 +238,7 @@
                         btnDeletar.id = "btnDeletar" + publicacao.idAviso;
                         btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
-                        divPublicacao.appendChild(spanID);
+                        // divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
                         //nivel
@@ -243,7 +246,7 @@
                         //nivel
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
+                        // divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }

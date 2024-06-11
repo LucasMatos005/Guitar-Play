@@ -35,14 +35,8 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-TRUNCATE TABLE aviso;
-
 SHOW TABLES;
-
-DROP TABLE nivel;
 
 SELECT * FROM aviso;
 SELECT * FROM usuario;
-SELECT * FROM nivel;
-DELETE FROM usuario WHERE id = 1;
 SHOW TABLES;
