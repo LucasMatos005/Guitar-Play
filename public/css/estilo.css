@@ -10,10 +10,10 @@ body {
 
 :root {
   --tchartmanho-header: 80px;
-  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-footer: 65px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-) - 2px);
+  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-) - 2px);
+  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-) - 2px);
+  --tamanho-: 20px;
 }
 
 .container {
@@ -23,7 +23,7 @@ body {
 }
 
 .header {
-  height: var(--tamanho-header);
+  height: 15vh;
 }
 
 .header .container {
@@ -159,7 +159,7 @@ body {
 
 .footer {
   background-image: linear-gradient(to right, #000000, #C89116);
-  height: 80px;
+  height: 70px;
   width: 100%;
   color: #FFDE59;
   display: flex;
@@ -185,7 +185,7 @@ body {
 /* LOGIN */
 
 .login {
-  height: var(--tamanho-login);
+  height: 75vh;
   background-image: url('../assets/imgs/fundoCadastro.jpg');
   background-size: cover;
 }
@@ -206,6 +206,7 @@ body {
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
+  margin-bottom: 20px;
 }
 
 .card h2 {

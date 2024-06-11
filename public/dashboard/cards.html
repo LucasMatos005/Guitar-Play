@@ -29,7 +29,7 @@
             <h1>Guitar Play</h1>
 
             <div class="hello">
-                <h3>Olá! Seja bem vindo, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Olá! Bem vindo, <span id="b_usuario">usuário</span>!</h3>
                 <h3>Seu nível é: <span id="b_nivel">Nivel</span></h3>
                 <!-- <h3>Seu cpf é: <span id="b_cpf">cpf</span></h3> -->
             </div>
@@ -62,7 +62,11 @@
 
         </div>
 
+        <div id="conteudo" style="height: auto;">
+
         <div id="iniciante" class="dash" style="display: none;">
+
+
             <div class="aulas">
                 <div>
                     <h1>Aulas - Iniciante</h1>
@@ -108,11 +112,69 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <select id="select_" onchange="mudarAulasIntermediario()" >
+                        <option selected disabled value="">Pronto para mais aulas?</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
             </div>
+
+            <div class="aulas" style="display: none;">
+                <div>
+                    <h1>Aulas - Intermediário</h1>
+                </div>
+                <div class="videos" >
+                    <div class="v1" >
+                        <video src="../assets/videos/caged_intermediario.mp4" width="450" poster="../assets/imgs/tumb.jpg" controls></video> 
+                        <div class="descricao" >
+                            <h2>Descrição: Sistema CAGED.</h2>
+                            <h3>
+                                Nesta primeira intermediária, vamos entender os conceitos iniciais sobre
+                                o sistema CADEG. Este sistema tem como objetivo explorar todo o braço do 
+                                violão com moldes de acordes que são feitos nas casas iniciais (1º até 5º).
+                                O exemplo base será dado com o molde do acorde de F e como outros acordes
+                                podem ser feitos no violão com este mesmo molde.
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="v2" >
+                        <video src="../assets/videos/independecia_dedos_intermediario.mp4" width="450" poster="../assets/imgs/tumb.jpg" controls></video>
+                        <div class="descricao" >
+                            <h2>Descrição: Independência dos dedos.</h2>
+                            <h3>
+                                Nesta segunda aula intermediária, iremos entender sobre como alcançarmos 
+                                independência nos dedos. Esta técnica é fundamental para a execução de solos
+                                que existem muita agilidade dos dedos. Este tipo de exercício deve ser realizado
+                                para sempre em sua joranda como violonista e aperfeiçoada conforme você evolui. Um 
+                                metrônomo pode ajudá-lo a alcançar isto! 
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="v3" >
+                        <video src="../assets/videos/slide_intemediario.mp4" width="450" poster="../assets/imgs/tumb.jpg" controls></video>
+                        <div class="descricao" >
+                            <h2>Descrição: Conceito sobre a técnica Slide.</h2>
+                            <h3>
+                                Nesta terceira aula aula intermediária, iremos entender sobre uma técnica
+                                que é aplicada na execução de solos: o slide. Slide é essencial quando 
+                                duas notam precisam ser tocadas respectivamente sem a interrupção de som
+                                entre a passagem de uma nota para outra. No exemplo, o slide foi entre as 
+                                notas G e A na corda B da casa 8 até a casa 10. Com a música "Deixe-me ir"
+                                da banda 1 kilo.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
 
-        <div id="intermediario" class="dash" style="display: none;">
+        <div id="intermediario" class="dash" style="display: none; height: auto;">
+
             <div class="aulas">
                 <div>
                     <h1>Aulas - Intermediário</h1>
@@ -159,14 +221,58 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="aulas" style="display: none;">
                 <div>
-                    <select id="select_">
-                        <option selected disabled value="">Pronto para o próximo nível?</option>
-                        <option value="sim">Sim</option>
-                        <option value="nao">Não</option>
-                    </select>
+                    <h1>Aulas - Avançado</h1>
+                </div>
+                <div class="videos" >
+                    <div class="v1" >
+                        <video src="../assets/videos/batida_avancado.mp4" width="450" poster="../assets/imgs/tumb.jpg" controls></video> 
+                        <div class="descricao" >
+                            <h2>Descrição: Batida com alternância de baixo com melodia.</h2>
+                            <h3>
+                                Nesta primeira aula avançada, vamos entender um pouco sobre uma técnica
+                                de ritmo em que você toca e então alterna o baixo com o dedo polegar e a 
+                                melodia com os dedos I, M e A. O exemplo no vídeo foi feito com os acordes
+                                C#m, E, B e A. Este conjunto de acordes faz parte do campo harmônico da 
+                                escala de A. Talvez você ache o som familiar, pois esse campo harmônico 
+                                é usado em muitas músicas.
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="v2" >
+                        <video src="../assets/videos/pentatonica_avancado.mp4" width="450" poster="../assets/imgs/tumb.jpg" controls></video>
+                        <div class="descricao" >
+                            <h2>Descrição: Escala Pentatônica.</h2>
+                            <h3>
+                                Nesta segunda aula avançada, vamos explorar um pouco sobre um tipo de escala muito
+                                utilizada para a composição de solos. O exemplo foi feito baseando-se na escala G.
+                                A escala pentatônica faz parte de uma família de escalas que são derivadas das 
+                                escalas maiores naturais. Além desta escala, existem os módulos gregos como: Dórico,
+                                Frígio, Lídio, Eólio, Jônico, Lócrio e Mixolídio.
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="v3" >
+                        <video src="../assets/videos/harmonicos_avancado.mp4" width="450" poster="../assets/imgs/tumb.jpg" controls></video>
+                        <div class="descricao" >
+                            <h2>Descrição: Harmônico Artificial.</h2>
+                            <h3>
+                                Nesta terceira aula aula inicial, iremos entender sobre uma técnica
+                                que é aplicada na execução de solos: o slide. Slide é essencial quando 
+                                duas notam precisam ser tocadas respectivamente sem a interrupção de som
+                                entre a passagem de uma nota para outra. No exemplo, o slide foi entre as 
+                                notas G e A na corda B da casa 8 até a casa 10. Com a música "Deixe-me ir"
+                                da banda 1 kilo.
+                            </h3>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
         </div>
 
 
@@ -220,6 +326,10 @@
                 </div>
             </div>
         </div>
+
+    </div>
+
+
     </div>
 
 </body>
@@ -240,10 +350,17 @@
         }
     }
 
-    function mudarNivelIniciante(){
-        var selecionado = select_.value;
-        if(selecionado == 'nao'){
-            alert('ta pegando')
+    function mudarAulasAvancado(){
+        var selecionado = document.getElementById("select_").value;
+        if(selecionado == 'sim'){
+            avancado.style.display = 'flex';
+        }
+    }
+
+    function mudarAulasIntermediario(){
+        var selecionado = document.getElementById("select_").value;
+        if(selecionado == 'sim'){
+            intermediario.style.display = 'flex';
         }
     }
 
