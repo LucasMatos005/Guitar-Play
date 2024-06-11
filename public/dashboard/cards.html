@@ -109,7 +109,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="dicas"><div><h1>Dicas</h1></div></div> -->
         </div>
 
 
@@ -159,6 +158,13 @@
                             </h3>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <select id="select_">
+                        <option selected disabled value="">Pronto para o próximo nível?</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -231,6 +237,13 @@
         } else if(b_nivel.innerHTML == 'avançado'){
             // avancado.style.display = 'block';
             document.getElementById("avancado").style.display = 'block';
+        }
+    }
+
+    function mudarNivelIniciante(){
+        var selecionado = select_.value;
+        if(selecionado == 'nao'){
+            alert('ta pegando')
         }
     }
 
